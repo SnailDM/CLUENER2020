@@ -28,6 +28,7 @@ class DatasetLoader(object):
         processed = []
         for d in data:
             text_a = d['context']
+            text_a = text_a.replace("  ", " ")
             tokens = [self.vocab.to_index(w) for w in text_a.split(" ")]
             x_len = len(tokens)
             text_tag = d['tag']
